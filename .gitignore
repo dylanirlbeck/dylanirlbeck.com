@@ -1,0 +1,3 @@
+node_modules/
+
+# Choosing not to add the yarn.lock file here.
