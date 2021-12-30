@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "dev": "yarn parcel index.html"
+  },
   "devDependencies": {
+    "parcel": "^2.0.1",
     "prettier": "2.5.1"
   }
 }
