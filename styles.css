@@ -1,0 +1,33 @@
+body {
+  /* https://fonts.google.com/specimen/Inter#standard-styles */
+  font-family: "Inter";
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
+  font-size: 14px;
+}
+
+/*
+ * Navigation styling.
+ */
+nav {
+  /* 
+   * Floats the nav bar to the right side of the screen.
+   *
+   * Source: https://developer.mozilla.org/en-US/docs/Web/CSS/float.
+   */
+  float: right;
+  /* TODO Read about this property. */
+  text-align: right;
+}
+
+/*
+ * Here is our first use of the descendant combinator pattern, used to style
+ * child elements within a parent (in this case, the nav element).
+ *
+ * Source: https://developer.mozilla.org/en-US/docs/Web/CSS/Descendant_combinator.
+ */
+nav ul {
+  /* Removes the bullets preceding each list item. */
+  list-style: none;
+  /* Don't want space between my name and the nav items. */
+  margin-top: 0;
+}
