@@ -17,6 +17,9 @@ nav {
   float: right;
   /* TODO Read about this property. */
   text-align: right;
+
+  margin-top: 30px;
+  margin-right: 20px;
 }
 
 /*
@@ -30,4 +33,17 @@ nav ul {
   list-style: none;
   /* Don't want space between my name and the nav items. */
   margin-top: 0;
+}
+
+/*
+ * Main body of content for each page.
+ */
+#content {
+  float: left;
+
+  /* margin-top should be kept consistent with the margin-top from the menu. 
+   * TODO Should pull out into a shared variable.
+   */
+  margin-top: 30px;
+  width: 500px;
 }
