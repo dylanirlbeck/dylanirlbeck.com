@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "yarn parcel index.html"
+    "dev": "yarn parcel index.html about/index.html"
   },
   "devDependencies": {
     "parcel": "^2.0.1",
