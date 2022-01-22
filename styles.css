@@ -53,10 +53,10 @@ nav ul {
 
 /* TODO Figure out what the rest of the properties do. */
 #right {
-  /* height: 1px; */
-  /* min-width: 0; */
-  /* overflow: hidden; */
+  height: 1px;
+  min-width: 0;
+  overflow: hidden;
   width: 200px;
-  /* margin: 0; */
-  /* padding: 0; */
+  margin: 0;
+  padding: 0;
 }
