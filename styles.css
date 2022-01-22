@@ -3,6 +3,8 @@ body {
   font-family: "Inter";
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
   font-size: 14px;
+
+  margin-top: 30px;
 }
 
 /*
@@ -18,7 +20,6 @@ nav {
   /* TODO Read about this property. */
   text-align: left;
 
-  margin-top: 30px;
   margin-left: 20px;
 }
 
@@ -37,15 +38,25 @@ nav ul {
   padding: 0;
 }
 
+/* Content container. Used to get the spacing right. */
+#content-container {
+  display: flex;
+  float: right;
+}
+
 /*
  * Main body of content for each page.
  */
 #content {
-  float: right;
-
-  /* margin-top should be kept consistent with the margin-top from the menu. 
-   * TODO Should pull out into a shared variable.
-   */
-  margin-top: 30px;
   width: 500px;
+}
+
+/* TODO Figure out what the rest of the properties do. */
+#right {
+  /* height: 1px; */
+  /* min-width: 0; */
+  /* overflow: hidden; */
+  width: 200px;
+  /* margin: 0; */
+  /* padding: 0; */
 }
