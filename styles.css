@@ -1,3 +1,6 @@
+/* 
+ * Global styling.
+ */
 body {
   /* https://fonts.google.com/specimen/Inter#standard-styles */
   font-family: "Inter";
@@ -9,6 +12,7 @@ body {
   margin-left: 20px;
 
   display: flex;
+  line-height: 1.5;
 }
 
 /*
@@ -24,9 +28,9 @@ nav {
   /* TODO Read about this property. */
   text-align: left;
   left: 48px;
-  position: sticky;
+  position: fixed;
   width: 170px;
-  height: 500px;
+  /* height: 500px; */
 }
 
 /*
@@ -44,6 +48,18 @@ nav ul {
   padding: 0;
 }
 
+/* 
+ * Main content styling. 
+ */
 #content {
   width: 540px;
+  margin-left: 340px;
+}
+
+#content h3 {
+  margin: 0;
+}
+
+#content p {
+  margin-top: 0;
 }
