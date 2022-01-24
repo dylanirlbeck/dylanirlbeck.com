@@ -63,3 +63,16 @@ nav ul {
 #content p {
   margin-top: 0;
 }
+
+/*
+ * Blog page styling.
+ */
+.blog-row {
+  display: flex;
+}
+
+.pd {
+  width: 8em;
+  flex-shrink: 0;
+  padding-bottom: 0.9em;
+}
