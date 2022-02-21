@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Design principles for dylanirlbeck.com • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+    <div id="page">
+      <h1>Design principles for dylanirlbeck.com</h1>
+      <div id="content">
+        <p>
+          As I’ve progressed throughout my brief career, one thing I’ve learned
+          is the value of understanding the inner-workings of the tools I use
+          every day. I’m currently a software engineer, so these tools include:
+          <a href="https://en.wikipedia.org/wiki/Git">Git</a>, a version control
+          system; <a href="https://neovim.io/">Neovim</a>, a terminal-based text
+          editor; <a href="https://www.ruby-lang.org/en/">Ruby</a>, a
+          programming language, and
+          <a href="https://rubyonrails.org/">Ruby on Rails</a> (or Rails, for
+          short), a web application framework; and many other tools that are
+          less prominent as of writing.
+        </p>
+        <p>
+          These tools are designed to be <em>used</em> by engineers like myself
+          to, most directly, build software “better.” Git makes it easier to
+          collaborate with other developers; Neovim comes replete with quick
+          commands for editing source code; Ruby and Rails provide useful
+          abstractions over machine code and web machinery, respectively. But
+          these tools’ benefits to me as an engineer are limited, in my view, by
+          my understanding of how they work at a deeper level. For example, by
+          understanding how Rails’
+          <a href="https://guides.rubyonrails.org/active_record_querying.html"
+            >database query interface</a
+          >
+          works under the hood, I can make better decisions as to when to write
+          raw SQL in application code.
+        </p>
+        <p>
+          But mere “understanding” of a tool only gets you so far: there will
+          always be more documentation to read, more blog posts to peruse, new
+          source code to pore over. In my view, the ideal way for me to truly
+          understand a tool — or any system, for that matter — is to build it
+          myself. In most cases this is infeasible, however, both due to time
+          and knowledge constraints. I accept this reality; I continue building
+          software with a necessarily-incomplete understanding of my tools.
+        </p>
+        <h2 id="buildingoverunderstanding">Building over understanding</h2>
+        <p>
+          When it comes to building my personal website, however, I’ve made a
+          different decision: I want to build it from pseudo-scratch. (I want to
+          minimize the use of platforms, libraries, design systems. And
+          absolutely <em>no</em> static site generators — those things are
+          inscrutable.)
+        </p>
+        <p>
+          Why focus my efforts on building a website, rather than the countless
+          other tools I use every day?
+          <a href="https://en.wikipedia.org/wiki/World_Wide_Web">The Web</a>
+          strikes me as the most influential digital system of the past few
+          decades. The work I do every day is on a web application; and the
+          solutions to many pressing problems, in my view, will reside on the
+          web — as websites, web applications, or some other web-based
+          technology that’s yet to hit the mainstream.
+        </p>
+        <p>
+          As I see it, the only way I’ll gain a deeper understanding of this
+          fundamental technology is by building <em>directly</em> on top of its
+          most fundamental components: HTML, CSS, and JavaScript.
+        </p>
+        <h2 id="designprinciples">Design principles</h2>
+        <p>
+          For posterity, I want to define some design principles that I aim to
+          hold myself to as I build. (Unfortunately, and as evidenced by this
+          post’s existence on my website, these principles are coming a tad late
+          — in retrospect, I would have written this post <em>before</em> I
+          wrote any code! Anyway…) Namely, I will:
+        </p>
+        <ul>
+          <li>
+            <em
+              >Keep the site’s content readable, accessible, and navigable.</em
+            >
+            Especially when it comes to blog posts, I intend for my content to
+            be readable by <strong>everyone</strong>, regardless of physical
+            impairments. The site should be mobile-friendly and hyper-fast,
+            though these are less important up-front. I’ll test my website’s
+            overall performance via Netlify’s
+            <a href="http://Testmysite.io">Testmysite.io</a> tool. (As of this
+            writing, my site scored a 99/100.)
+          </li>
+          <li>
+            <em
+              >Minimize the gap between the core web technologies and the system
+              that supports my website.</em
+            >
+            I’ve already mentioned my distaste for
+            <a
+              href="https://www.cloudflare.com/learning/performance/static-site-generator/"
+              >static site generators</a
+            >
+            (SSG): these systems try to be everything for everyone, and in the
+            process provide an abstraction that is <em>many</em> levels above
+            the core elements of the Web. I plan to eschew technologies like
+            SSGs and their cousins — web frameworks (like
+            <a href="https://reactjs.org/">React</a>) and CSS frameworks (such
+            as <a href="https://tailwindcss.com/">TailwindCSS</a>) — in the hope
+            that I will always be able to reason about my system.
+          </li>
+          <li>
+            <em>Build with transparency.</em> Ideally, anyone would be able to
+            clone my process — the source code, build and deployment process,
+            etc. — with confidence. To start, I’ll keep to this principle by (a)
+            keeping my website code
+            <a href="https://github.com/dylanirlbeck/dylanirlbeck.com"
+              >open-source</a
+            >, (b) including comprehensive code comments where relevant, and (c)
+            publishing regularly about my process (and any noteworthy
+            improvements I make).
+          </li>
+          <li>
+            <em>Automate only when necessary</em>. For example, there are a
+            number of
+            <a
+              href="https://softwareengineering.stackexchange.com/questions/80084/is-premature-optimization-really-the-root-of-all-evil"
+              >premature optimizations</a
+            >
+            I could make right now vis-a-vis my HTML generation process: at
+            present, I write Markdown locally, in
+            <a href="http://notion.so">Notion</a>, and once it is done I
+            generate HTML and edit it to make it suitable for publishing. There
+            are micro-steps that I’m positive could be obviated with a little
+            bit of software. That said, my blog probably has one reader, me, and
+            so I’d be spending time automating when I <em>should</em> be
+            spending time writing better content. (Or finding new blog topics,
+            reading, or simply staying away from my computer.) Put another way:
+            I’ll make my blogging life easier when there is an obvious reason
+            to. Similar logic applies to my decisions around website analytics,
+            for instance.
+          </li>
+        </ul>
+        <p>
+          You can follow along with me on
+          <a href="https://github.com/dylanirlbeck/dylanirlbeck.com">GitHub</a>.
+          I’m excited to see how this site — and my mental model of the World
+          Wide Web — evolves.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
