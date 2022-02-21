@@ -8,7 +8,7 @@ My primary goal for my website is to focus on the _content_. The site should be 
 
 ## Writing process
 
-My writing process is simple and decidedly manual. For any blog posts, I use [Notion](https://notion.so) to do the actual writing process: drafting, editing, and so forth. Once I'm finished, I'll export the content as Markdown and use [showdown](https://github.com/showdownjs/showdown) to convert the Markdown into HTML that I can insert into my site.
+My writing process is simple and decidedly manual. For any blog posts, I use [Notion](https://notion.so) to handle the actual writing process: drafting, editing, and so forth. Once I'm finished, I'll export the content as Markdown and use [showdown](https://github.com/showdownjs/showdown) to convert the Markdown into HTML that I can insert into my site.
 
 I'll then set up all the technical boilerplate (i.e. an entry in `blog/` and a hyperlink from `blog.html` to the new post). Once I push to the `main` branch, Netlify will take care of deploying the new code automatically.
 
@@ -18,10 +18,11 @@ Aside from being a home for my public persona, this project also represents my f
 
 ## Open source
 
-I commit to keeping my website code open-source and writing about its development process and design decisions as much as possible. I'd love to see more people understanding their software from a deeper level: an easy way to force this is to build a website with pure HTML and CSS. I hope that my site provides a model. 
+I commit to keeping my website code open-source and writing about its development process and design decisions as much as possible. I'd love to see more people understanding their software from a deeper level: an easy way to enforce this for myself is to build a website with pure HTML and CSS.
 
 ## Inspiration
 
-There are a number of personal website's I've taken inspiration from. In no particular order:
+There are a number of personal websites/blogs I've taken inspiration from. In no particular order:
 * [Patrick Collison](https://patrickcollison.com/)
 * [Devon Zuegel](https://devonzuegel.com/)
+* [Dan Luu](https://danluu.com/)
