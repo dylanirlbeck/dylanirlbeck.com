@@ -6,6 +6,8 @@ Here lives the code for my personal website. The project is designed to be minim
 
 My primary goal for my website is to focus on the _content_. The site should be readable, fast, accessible, and navigable: if these criteria are not met, I'm off course and need to correct.
 
+[Read more about my website's design principles](https://dylanirlbeck.com/blog/design-principles).
+
 ## Writing process
 
 My writing process is simple and decidedly manual. For any blog posts, I use [Notion](https://notion.so) to handle the actual writing process: drafting, editing, and so forth. Once I'm finished, I'll export the content as Markdown and use [showdown](https://github.com/showdownjs/showdown) to convert the Markdown into HTML that I can insert into my site.
