@@ -99,3 +99,10 @@ nav ul {
   flex-shrink: 0;
   padding-bottom: 0.3em;
 }
+
+/*
+ * Books page styling.
+ */
+.in-progress {
+  color: #367da2;
+}
