@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Notes on Domain Modeling Made Functional • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+    <div id="page">
+      <h1>Notes on Domain Modeling Made Functional</h1>
+      <p>
+        I’ll divide my notes from <i>Domain Modeling Made Functional</i> into
+        four main sections: fundamentals of
+        <a href="https://en.wikipedia.org/wiki/Domain-driven_design"
+          >domain-driven design</a
+        >; functional architectures; domain modeling; and high-level takeaways.
+        I’ll include page numbers where applicable in case you’ve purchased the
+        book and want to use these notes as a reference.
+      </p>
+      <p>
+        Overall, I greatly enjoyed this book, and I’d likely advocate for using
+        its guidance if I become an architect of an enterprise software project
+        in the future. In practice, I plan to use its guidance on domain
+        modeling quite heavily: I want to understand the domain of freight
+        forwarding (and specifically, warehousing) deeply enough such that I can
+        model the core components effectively in software. In addition, I will
+        continue to look for ways to apply the principles of functional
+        programming (particularly around designing programs as pipleines)
+        despite my usage of object-oriented languages in my day-to-day (Ruby,
+        JavaScript, and Java).
+      </p>
+      <h2 id="fundamentalsofdomaindrivendesignddd">
+        Fundamentals of domain-driven design (DDD)
+      </h2>
+      <ul>
+        <li>
+          Fundamental components of DDD (p. 22)
+          <ul>
+            <li>
+              <em>Bounded contexts</em>: subsystems with clear boundaries, each
+              of which own their data stores. These systems consist of
+              workflows, and each has its own contextual language.
+            </li>
+            <li>
+              <em>Domain events</em>: generated via techniques such as
+              <a href="https://en.wikipedia.org/wiki/Event_storming"
+                >event storming</a
+              >
+              (and related to
+              <a href="https://martinfowler.com/eaaDev/EventSourcing.html"
+                >event sourcing</a
+              >)
+            </li>
+            <li><em>Commands</em></li>
+            <li>
+              <em>Ubiquitous</em>: a language with nouns — data structures — and
+              verbs — business processes — that is shared between all
+              stakeholders in a project. These terms should be maintained in a
+              <strong>living</strong> document.
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="functionalarchitecture">Functional architecture</h2>
+      <ul>
+        <li>
+          What are the main components of a functional architecture? (pp. 43-55)
+          <ul>
+            <li>
+              Bounded contexts as autonomus subsystems with well-defined [data]
+              boundaries. These contexts could be <em>implemented</em> in a
+              variety of ways, depending on the scale of the system.
+              <ul>
+                <li>
+                  Could be simple software modules/classes, separate
+                  network-isolated services, or even microservices.
+                </li>
+                <li>
+                  In general: start with a monolith and refactor into services
+                  at sufficient scale.
+                </li>
+              </ul>
+            </li>
+            <li>
+              Components stay decoupled when communicating (via events/message
+              queues), or simple function calls
+            </li>
+            <li>
+              Contracts between bounded contexts is a hard concept to get right,
+              but incredibly important (p. 48)
+            </li>
+            <li>
+              Code structure within a bounded context:
+              <a
+                href="https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/"
+                >onion architecture</a
+              >
+              (p. 52)
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 id="domainmodeling">Domain modeling</h2>
+      <ul>
+        <li>
+          The idea of documentation as <em>compilable</em> code — i.e. types —
+          is the central to domain modeling. (p. 57)
+        </li>
+        <li>
+          Type patterns (p. 78)
+          <ul>
+            <li>
+              <em>Simple values</em> (e.g. identifiers, messages). These values
+              are often constrained in the domain. For example, if there are
+              only 100 products in a catalog, an integer-based product code
+              could only go up to 100.
+            </li>
+            <li>
+              <em>AND combinations</em>. These types represent closely linked
+              data (i.e. documents), and are implemented with records.
+            </li>
+            <li>
+              <em>Choices with OR</em>. Represents a choice between this
+              <em>or</em> that.
+            </li>
+            <li>
+              <em>Workflows</em>. Business processes with well-defined inputs
+              and outputs. Often, these workflows cause side effects. (Workflows
+              correspond to functions.)
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href="https://stackoverflow.com/questions/75446/value-vs-entity-objects-domain-driven-design"
+            >Value Objects vs. Entities</a
+          >
+          for classifying data(p. 88)
+          <ul>
+            <li>
+              <em>Value Objects</em>: objects <strong>without</strong> a
+              persistent identity. For instance, if the fact that the fields of
+              two objects are the same means the “value” of those objects are
+              the same, you’re dealing with value objects.
+            </li>
+            <li>
+              <em>Entity</em>: objects <strong>with</strong> a persistent
+              identity. Often, these objects are documents of some kind. They
+              have a unique identity even if their components (fields) change.
+            </li>
+            <li>
+              <em>Aggregate</em>: collection of entities, where the top-level
+              entity is called the <em>aggregate root.</em> Aggregates enforce
+              consistency and invariants in the domain: if an entity in its
+              collection changes, it will reflect those changes across other
+              associated entites in the domain.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Core principle:
+          <a
+            href="https://fsharpforfunandprofit.com/posts/designing-with-types-making-illegal-states-unrepresentable/"
+            >make illegal states unrepresentable</a
+          >
+          in the domain via <em>integrity</em> and <em>consistency</em> (p. 103)
+          <ul>
+            <li>
+              In distributed systems, we should be able to trust that
+              <a href="https://en.wikipedia.org/wiki/Eventual_consistency"
+                >“eventual consistency”</a
+              >
+              will get the system to the state we expect in spite of transient
+              failures.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Workflows implemented as
+          <a href="https://en.wikipedia.org/wiki/Pipeline_(software)"
+            >pipelines</a
+          >
+          (p. 119)
+          <ul>
+            <li>
+              Data is passed from one function to another, in the form of a
+              pipeline. (And more concretely, using the pipeline operator in
+              FP.)
+            </li>
+            <li>
+              State machines in particular can be highly useful for modeling
+              workflows.
+            </li>
+          </ul>
+        </li>
+        <li>Idea: documenting side effects in function type signatures.</li>
+      </ul>
+      <h2 id="takeaways">Takeaways</h2>
+      <ul>
+        <li>
+          F# is a great language for DDD: it has useful primitives such as
+          algebraic data types, modules, map/bind methods, Result/Async type
+          wrappers, and computation expressions.
+          <ul>
+            <li>
+              I don’t believe that the third section of the book in particular,
+              since it was so implementation-heavy, is immediately useful to
+              most developers if there is already lots of code in a
+              <em>different</em> language. (Perhaps if the existing language is
+              part of the JVM, though, this assertion might not hold.)
+            </li>
+          </ul>
+        </li>
+        <li>
+          I like to think of domain types as an <em>instantiation</em> of the
+          ubiquitious language.
+          <ul>
+            <li>
+              However, I don’t think this book dove as deep into requirements
+              gathering as I would have liked. Without understanding the domain,
+              you can’t attempt to domain model.
+            </li>
+          </ul>
+        </li>
+        <li>
+          With rigorous and intentional domain modeling, I can’t imagine the
+          design getting out-of-sync with the code <em>nor</em> the real world
+          requirements.
+        </li>
+        <li>
+          Pushing input/output to the boundaries of a workflow/application can
+          make business logic significantly easier to reason about. More
+          practically, I think this pattern can be implemented in simple method
+          calls as well: push logs, jobs, etc. to the very end of void
+          (unit-returning) methods to make it crystal-clear where the side
+          effects are occuring. Burying logs or other side effects in helper
+          functions can make a system’s behavior incrementally more difficult to
+          reason through (not to mention harder to test).
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
