@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Web as Information Paradigm • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/blog.html">Blog</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+    <div id="page">
+      <h1>The Web as Information Paradigm</h1>
+      <div id="content">
+        <p>
+          The following essay was my term paper for
+          <a href="https://courses.physics.illinois.edu/phys419/sp2021/"
+            >Physics/Philosophy 419: Space, Time, & Matter</a
+          >, taught at the University of Illinois Urbana-Champaign by Professor
+          Philip Phillips. I took the course as a senior in Spring 2021.
+        </p>
+        <p>
+          As one of the few significant essays I've written (I graduated with a
+          B.S. in Computer Science, so we didn't write in English all that
+          often), there will likely be bugs. Any spelling or grammatical errors,
+          stylistic inconsistencies, or citation issues are not intentional and
+          I would love for you to make me aware of them.
+        </p>
+        <p>
+          In addition, I wrote this essay without having completed
+          <em>Weaving the Web</em> by Sir Tim Berners-Lee. After reading
+          firsthand his ideas about the web's inception and evolving goals, I
+          would probably have reworded the Normal Science section in particular,
+          and minor other sentences of the essay in general. Either way, I
+          wanted this blog to contain the term paper in its original form.
+        </p>
+        <p>
+          Logistics and reflections aside, this essay argues that the World Wide
+          Web, as we know it, fits within the Kuhnian framework for a paradigm.
+          The implication is that a new paradigm will, ultimately, supplant the
+          Web as our shared medium of digital information exchange.
+        </p>
+        <hr />
+        <h2 id="introduction">Introduction</h2>
+        <p>
+          Thomas Kuhn induced a paradigm shift with his seminal book,
+          <em>The Structure of Scientific Revolutions</em>. In particular, this
+          shift occurred in the ways we collectively view the process of
+          discovery: the manner in which new ideas are conceived and
+          subsequently refined. Kuhn’s work was focused on the natural sciences,
+          specifically physics. However, the reach of Kuhn’s work extends to
+          many other domains. Scholars in mathematics and linguistics, for
+          example, have employed Kuhn’s framework to understand the development
+          of their own fields. In addition, the notion of a “paradigm shift”
+          permeates popular culture, particularly among entrepreneurs and
+          corporations purporting to offer groundbreaking new products.
+        </p>
+        <p>
+          One technology of world-changing consequence was the World Wide Web
+          (WWW, or just, the Web). Invented and implemented by Sir Tim
+          Berners-Lee in the early 1990s, the Web is the mechanism by which we
+          access information online. It is a service, much like email or Usenet,
+          that sits on top of the Internet. Many people forget that the Web was
+          an invented technology that followed the internet, and that it has an
+          idiosyncratic history worthy of study. What, though, is the best
+          framework by which to analyze the technical development of the Web?
+          What about its broader impact on technology and society? Many people,
+          and especially technologists, view the Web as an unchanging and
+          amorphous medium for information. But the Web is not without its
+          problems, many of which are becoming more pronounced in our
+          increasingly-digitized era.
+        </p>
+        <p>
+          Like Newtonian or Einsteinian mechanics in physics, the World Wide
+          Web, and particularly its utility to humans, can be understood as a
+          paradigm. By analyzing the Web’s structure from this perspective, I
+          will argue that we can collectively escape from its limitations --
+          and, consequently, reimagine the possibilities for information
+          exchange.
+        </p>
+        <h2 id="thestructureoftheweb">The Structure of the Web</h2>
+        <p>
+          What follows in this section is a fitting of the Web -- its
+          development and its impacts -- into the Kuhnian philosophy of science.
+          There is certainly not a one-to-one correspondence, but nevertheless,
+          many of Kuhn’s most famous ideas -- namely, the pre-paradigm period
+          and schools, normal science, anomaly, and crisis -- apply surprisingly
+          well. The main implication of understanding the Web from this
+          perspective, as we will detail in Section III, is a reframing: the
+          Web, although the first mainstream mechanism for digital information
+          access, does not necessarily prefigure our information future.
+        </p>
+        <h3 id="preparadigmperiodandschools">
+          Pre-Paradigm Period and Schools
+        </h3>
+        <p>
+          In the decades leading up to the Web’s inception, there was increasing
+          awareness about the opportunities in information science presented by
+          computers. Moore’s Law, formulated in 1965, stated that the number of
+          transistors in an integrated circuit would double roughly every two
+          years; in other words, computing power and storage capacity was
+          exponentially increasing. However, there was a commensurate number of
+          ideas about what the tools for information access ought to look like.
+          I will discuss two of the main projects pegged, in different ways, as
+          alternatives to the World Wide Web: Project Xanadu and the Gopher
+          Project.
+        </p>
+        <p>
+          Arguably the underlying technology of the Web is known as
+          <em>hypertext</em>: text that embeds references (hyperlinks) to other
+          text. The idea for hypertext, though, actually comes from Ted Nelson,
+          the founder of Project Xanadu. Nelson saw physical paper as a
+          suffocating, dimension-bound, and single-sequence object. Computers,
+          on the other hand, could be used to parallelize reading/writing and
+          clearly display the interconnections between documents. Although the
+          World Wide Web relies on Nelson’s concept of a hyperlink, it leaves
+          out the visible bridges between linked documents, and there is
+          certainly no built-in notion of parallelism. Project Xanadu, despite
+          being officially founded in 1960, did not produce a working prototype
+          until 1998 -- several years after the Web’s founding and subsequent
+          growth. To this day, Nelson continues work on “The Original Hypertext
+          Project”, and even states on his project’s homepage: “The computer
+          world is not just technicality and razzle-dazzle. It is a continual
+          war over software politics and paradigms. With ideas which are still
+          radical, WE FIGHT ON” (Project Xanadu).
+        </p>
+        <p>
+          The Gopher Project, born at the University of Minnesota and bearing
+          the same name as its mascot, was a much more practical Web alternative
+          than Project Xanadu. The Gopher system had a number of key features,
+          some of which even influenced the Web: file-like hierarchical
+          management, more rigid document structure (in contrast to the relative
+          free-formness of HTML in the Web), and file system tools like search
+          engines (Kirscht). One of its most important elements is simplicity:
+          because it doesn’t have focus on page styling or commercialization,
+          information is presented in a more straightforward way than most
+          modern websites. Despite its benefits, the popularity of the Mosaic
+          web browser, which targeted web technologies, and Minnesota’s
+          introduction of licensing fees for the Gopher software made the Web a
+          more attractive option for most computer users. Still, it is important
+          to note that some technology hobbyists still make scant use of the
+          Gopher project today.
+        </p>
+        <p>
+          In sum, before the widespread adoption of the Web in the mid-1990s,
+          the ecosystem for digital information tooling was vibrant and diverse.
+          This system closely resembles, in my view, the pre-paradigm eras for
+          many of the major natural sciences. As we all know, the Web won out,
+          and most technologists, especially those younger, have little
+          knowledge of the historical development of the platform -- the Web --
+          in which most software is built on top of. Still, there is an
+          additional similarity between the Web and natural science pre-paradigm
+          eras that cannot be ignored. Ted Nelson continues to fight for the
+          “radical” future that he envisioned back in 1960. Now in his 80s,
+          Nelson bears striking similarities to the older natural scientists
+          who, Kuhn writes, never fully accept a new paradigm.
+        </p>
+        <h3 id="normalscience">Normal Science</h3>
+        <p>
+          The original goal of the Web was to connect people and information. In
+          the decades following the Web’s inception, many efforts have been
+          undertaken to advance this goal. These developments are analogous to
+          normal science, in that they match facts with and aim to refine the
+          existing paradigm (namely, the Web). To illustrate this, I will trace
+          a brief history of the Web post-1990, touching particularly on the
+          popular -- and unofficial -- terms “Web 1.0”, “Web 2.0”, and “Web
+          3.0.”
+        </p>
+        <p>
+          <strong>“Web 1.0”</strong> was the retronym applied to the first era
+          of the World Wide Web. Arguably, this version of the Web was the most
+          simple: webpages were static, content was provided from a server’s
+          filesystem (as opposed to a database), and users were passive
+          consumers of websites.
+        </p>
+        <p>
+          Seeing the Web as burgeoning technology, developers from the
+          University of Illinois sought to make information on the Web more
+          accessible. The result was Netscape, the company, and Netscape
+          Navigator: a web browser with a focus on user-friendly design. Until
+          1994, when Netscape released its browser, early web-surfing
+          applications were notoriously dull, devoid of multimedia and color.
+          Navigator, on the other hand, supported video clips, sound, forms, and
+          bookmarks -- this diverse set of features made it the standout among
+          early browsers and, at large, greatly accelerated the Web’s growth
+          (Blitz).
+        </p>
+        <p>
+          As an agent of the Web’s larger mission, Navigator was highly
+          successful. In particular, it seemed to move the Web much closer to
+          actualizing its goal of being accessible: without an elegant and
+          featureful web browser, it is likely that the World Wide Web wouldn’t
+          have been widely adopted by non-technologists. Although Navigator was
+          superseded by Internet Explorer and, later, Google, it had a decidedly
+          positive impact on the Web’s accessibility. In the Kuhnian sense,
+          Navigator represents a perfect example of matching facts -- modern
+          technologies -- with theory -- the Web’s goals.
+        </p>
+        <p>
+          The term <strong>“Web 2.0”</strong> was coined in 1999 by Darcy
+          DiNucci, and tacitly defined the “Web 1.0” just discussed. This new
+          era in the Web’s history was marked by tremendous advances in
+          interactivity; that is, the ability of users to create and consume web
+          content dynamically. Some of the features of Web 2.0 include
+          user-generated content; APIs to automated usage of websites by, for
+          example, other applications; and rich user experiences enabled by new
+          web technologies like JavaScript, Ajax, and Adobe Flash.
+        </p>
+        <p>
+          The essential attribute of Web 2.0, and arguably that which we most
+          associate with the Web now, is user participation. Facebook, despite
+          its modern controversies, embodies this characteristic better than
+          nearly any other piece of software. As noted above, Web 1.0 was
+          designed to facilitate user consumption of online information --
+          websites, web browsers, and web technologies were all tailored to
+          satisfy this need. Sites like Facebook, however, reimagined the
+          possibilities of the Web, and specifically, the user’s relationship
+          with information. They saw the real potential of the Web as a
+          connector: not just of people to information or information to
+          information, via websites and hyperlinks, respectively, but of people
+          to people.
+        </p>
+        <p>
+          Facebook, and related services, represent an articulation of the Web’s
+          paradigm. The minds behind this wave of software extended what the Web
+          was capable of, technologically and ideologically, but they did not
+          altogether supplant the Web (which would have constituted a paradigm
+          shift). Web 2.0, in my view, is aptly named even if it is an informal
+          designation: nothing about the concept of the Web fundamentally
+          changed.
+        </p>
+        <h3 id="anomaly">Anomaly</h3>
+        <p>
+          As Web 2.0 progressed, a fundamental problem was identified: to take
+          full advantage of the Web, users had to give up their data. Moreover,
+          their data was often owned by several different service providers; a
+          typical user may, for instance, give substantial personal information
+          to Facebook, Google, and LinkedIn. From the perspective of the Web as
+          a paradigm, data privacy was a veritable anomaly.
+        </p>
+        <p>
+          The specific features of <strong>“Web 3.0”</strong> are not as clearly
+          defined as its 1.0 and 2.0 predecessors, in large part because it
+          doesn’t exist yet. However, Tim Berners-Lee, the Web’s inventor, has
+          been working to resolve the aforementioned anomaly and consequently
+          bring about a new web. As he puts it, Web 3.0 will be defined by
+          people having complete ownership over their data, rather than
+          corporations. He plans to get us there via the Solid project and
+          Inrupt, the company leading its development.
+        </p>
+        <p>
+          To understand Solid, we must briefly touch on a core technology of the
+          Web: the client-server model, wherein a client (user) sends and
+          receives data from the server (company, like Facebook). Typically,
+          when a user creates an account, their data will be permanently stored
+          “server-side”. As we’ve discussed, this is especially problematic when
+          you are interacting with multiple servers, since each additional copy
+          of your data further impinges on your privacy. This model also makes
+          it more likely that your data could be stolen, since any of these
+          servers could theoretically be breached.
+        </p>
+        <p>
+          The idea behind the Solid project is a decentralized data store,
+          called a Pod. As described on Solid’s website, Pods are like “secure
+          personal web servers for data.” Through their Pod, people can specify
+          which applications can access their data, and can grant or revoke
+          access at any time. The business model for Inrupt, Berners-Lee’s
+          company, is to manage user Pods by simplifying the sign-up process and
+          abstracting the technical details of running a Pod. Though there is
+          the option to self-host -- that is, to set up one’s own Pod on a
+          personal computer or cloud server -- this option is likely infeasible
+          for any non-technical person (Solid Project).
+        </p>
+        <h3 id="crisis">Crisis</h3>
+        <p>
+          In my view, Solid and Inrupt is Berners-Lee’s attempt to resolve the
+          privacy anomaly. This makes sense, because Berners-Lee is unable to
+          envision alternatives to the Web itself. He is making, more or less,
+          an ad-hoc modification to the paradigm -- namely, that a user’s data
+          should not be provided and should instead be <em>licensed</em>.
+          However, Solid and Inrupt, as currently designed, is likely to fail in
+          this goal. By requiring users to store their data in a company-hosted
+          Pod, user privacy is still at risk, albeit on less fronts. More
+          pernicious, though, is the fact that even in Web 3.0, corporations
+          will still run applications to which users will connect for service.
+          Web usage will therefore continue to involve fundamentally-unwanted
+          third-parties. Undoubtedly, the Web and its community are in crisis.
+        </p>
+        <h2 id="theresolutionofcrisis">The Resolution of Crisis</h2>
+        <p>
+          As Kuhn describes in <em>Structure</em>, a key sign of crisis is when
+          the field’s eminent authorities begin to take notice of an anomaly
+          (Kuhn, 67). Berners-Lee’s work on Solid has shown this to already be
+          the case: he is desperately trying to resolve the Web’s inherent data
+          privacy issues. However, as crisis goes, his work is likely to, at the
+          very best, become a band-aid fix -- patchwork solutions can only go so
+          far.
+        </p>
+        <p>
+          What our information age needs is a new paradigm, a new theory of
+          information access and exchange. And there is at least one, that I can
+          identify, which seems to have massive potential: Urbit. In its own
+          words, Urbit is a “peer-to-peer internet being built from scratch to
+          be more private, secure, and durable than the current internet.” Let’s
+          analyze what exactly that means against the backdrop of the modern web
+          (Urbit).
+        </p>
+        <p>
+          First, some terminology for the following paragraphs: Urbit is the
+          name of the project, for which we just gave a high-level definition.
+          In addition, “an Urbit” is an informal way to reference a personal
+          server connected to the Urbit network. This will make more sense in a
+          moment.
+        </p>
+        <p>Key features of the Urbit stack:</p>
+        <ul>
+          <li>
+            <strong>A personal server</strong>: As we mentioned earlier, so much
+            of our data and the application code that utilizes that data is run
+            “server-side.” This is because, for most normal people, running your
+            own Unix server would be much too complicated. Of course, the
+            problem is that by deferring the computation to corporate servers,
+            we lose control over our data. The solution? Give everyone an Urbit:
+            a <em>personal</em> server that stores data, performs computation,
+            connects to the Internet, and much, much more.
+          </li>
+          <li>
+            <strong>A peer-to-peer network</strong>: In order to message to a
+            friend over a service like iMessage or WhatsApp, your message is
+            first sent to a corporate server, processed, (potentially) sent to a
+            different server, then delivered to your friend. In a peer-to-peer
+            network, there is one step: the message from your computer gets sent
+            <em>directly</em> to your friend’s computer. This is the exact
+            “networking model that Urbit offers (just replace “computer” in the
+            previous sentence with “Urbit”).
+          </li>
+          <li>
+            Other features include a built-in reputation system to fight
+            scammers, a decentralized identity system, and a functional
+            operating system, but these are less important to Urbit as a strict
+            web replacement. (Newton)
+          </li>
+        </ul>
+        <p>
+          To many technologists, the ideas of Urbit seem radical. And indeed,
+          for these people, they are. As Kuhn would put it, the ideas propounded
+          by the Urbit project are incommensurable with those of our
+          web-dominated world. But the unique nature of paradigms is that they
+          will ultimately be replaced. Urbit exists as one such replacement, but
+          there will certainly be others.
+        </p>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>
+          Conceiving of the Web as a paradigm would seem to violate the very
+          notion of technological advance. After all, many would say we live in
+          a world whose technology has built upon its predecessors in a
+          perfectly explainable, linear fashion. However, I contend that
+          technological advance is unrelated to the central question of how we,
+          as humans, use our tools. Technology has paradigms in the same way
+          that natural science has paradigms: instead of trying to explain
+          nature, as the sciences do, technology instead tries to improve
+          humankind’s relationship to nature (and, by extension, to one
+          another). When our tools are no longer serving our needs, we replace
+          them.
+        </p>
+        <p>
+          Shifting away from the Web paradigm is not to abandon the Web: core
+          technologies like hyperlinks, multi-way communication, search, and
+          browsers will continue to influence future tools and ideas for
+          information exchange, much as they have done in the Urbit project.
+          Rather, this shift is about digital agency: how we recapture it, and
+          how we preserve it.
+        </p>
+        <h2 id="bibliography">Bibliography</h2>
+        <ul>
+          <li>
+            Kuhn, Thomas. <em>The Structure of Scientific Revolution</em>.
+            Chicago: University of Chicago Press, 1970.
+          </li>
+          <li>
+            Berners-Lee, T., &amp; Fischetti, M. (1999).
+            <em
+              >Weaving the Web: the past, present and future of the World Wide
+              Web by its inventor</em
+            >. Orion Business.
+          </li>
+          <li>
+            Ted Nelson demonstrates Xanadu Space - YouTube. In , &amp; ,
+            YouTube. Retrieved May 10, 2021, from
+            https://www.youtube.com/watch?v=En_2T7KH6RA
+          </li>
+          <li>
+            Project Xanadu. (2021, May 10). Project Xanadu. https://xanadu.net/
+          </li>
+          <li>Urbit. (2021, May 10). Urbit. https://urbit.org</li>
+          <li>
+            Solid Project. (2021, May 10). Solid Project.
+            https://solidproject.org
+          </li>
+          <li>
+            Newton, Erik. (2020, Feb. 12). Urbit for Normies.
+            https://urbit.org/blog/urbit-for-normies/
+          </li>
+          <li>
+            Blitz, Matt. (2019, Apr. 4). Later, Navigator: How Netscape Won and
+            Then Lost the World Wide Web.
+            https://www.popularmechanics.com/culture/web/a27033147/netscape-navigator-history/
+          </li>
+          <li>
+            Kirscht, Kay. (2017, Mar. 8). The Gopher Project: Early Internet and
+            U of M Libraries.
+            https://news.minitex.umn.edu/news/2020-07/gopher-project-early-internet-and-u-m-libraries
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
