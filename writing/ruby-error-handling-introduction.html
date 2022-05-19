@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Error Handling in Ruby: Introduction • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/writing.html">Writing</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+
+    <div id="page">
+      <h1>Error Handling in Ruby: Introduction</h1>
+      <p>
+        There exists a large class of functions which can “fail.” For
+        side-effect-producing functions, loud failures may arise when performing
+        I/O like database reads and writes, gRPC calls to external services, or
+        publishing to an event log. But even simple, pure code may fail. For
+        example, suppose we want to write a function for updating two different
+        dates — X and Y — on a domain object, and we have a rule that X
+        <em>must</em> always precede Y (the function should return a new
+        instance of the domain object). If a caller attempts to pass in a date
+        for Y that comes before X, what value should we return? One construct
+        afforded by most languages,
+        <a href="https://ruby-doc.org/core-2.5.1/Exception.html"
+          >including Ruby</a
+        >, is to raise an exception. But exceptions
+        <a
+          href="https://rmosolgo.github.io/ruby/programming/2016/11/23/raising-exceptions-is-bad.html"
+          >generally make code harder to understand</a
+        >, and are a bit heavy for pure functions like the date update described
+        above. Is there another pattern we can use as the return value for
+        functions that can fail?
+      </p>
+      <hr />
+      <p>
+        This post is the first in a series on error handling in Ruby. In it, I
+        attempt to explore how
+        <a href="https://ruby-doc.org/core-2.5.1/Exception.html">exceptions</a>,
+        result monad patterns (like those present in languages like
+        <a href="https://v2.ocaml.org/api/Result.html">OCaml</a> and
+        <a
+          href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/results"
+          >F#</a
+        >), and <a href="https://sorbet.org/">Sorbet</a>, a static type system,
+        might be combined to create a coherent approach to error handling in
+        Ruby.
+      </p>
+      <p>
+        Error handling poses a challenge to the reasonability of digital systems
+        in general: if errors -- both expected and unexpected -- are not handled
+        consistently and explicitly, developers will have a difficult time
+        predicting system behavior with confidence. To this end, I'll aim to
+        call out any learnings I have vis-a-vis error handling which apply
+        outside of Ruby.
+      </p>
+    </div>
+  </body>
+</html>
