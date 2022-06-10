@@ -1,4 +1,4 @@
-# Error Handling in Ruby: Introduction
+# Error handling in Ruby: introduction
 
 There exists a large class of functions which can “fail.” For side-effect-producing functions, loud failures may
 arise when performing I/O like database reads and writes, gRPC calls to external services, or publishing
