@@ -13,18 +13,20 @@
 /* } */
 
 body {
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
-  /* font-size: 16px; */
+  --font-mono: "Menlo", "Monaco", monospace;
+  --background-block: #f1f1f8;
 
   -webkit-font-smoothing: antialiased;
   color: #424241;
   fill: currentcolor;
 
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
   /* https://fonts.google.com/specimen/Inter#standard-styles */
   /* This will only use Inter if they have it on their system already. */
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif !important;
+
   font-weight: 400;
   font-size: 16px;
   overflow-x: hidden;
@@ -127,4 +129,44 @@ nav ul {
  */
 .in-progress {
   color: #367da2;
+}
+
+/*
+ * Code styling.
+ */
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+pre {
+  display: block;
+  margin: 1.5em 0;
+  background: var(--background-block);
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+pre > code {
+  line-height: 1.5em;
+  flex-shrink: 0;
+  display: block;
+  padding: 1em;
+}
+
+code {
+  background: var(--background-block);
+}
+
+li code,
+p code {
+  padding: 3px 5px;
+}
+
+blockquote {
+  font-style: italic;
 }

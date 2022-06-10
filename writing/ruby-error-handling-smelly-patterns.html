@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Error handling in Ruby: introduction • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/writing.html">Writing</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+
+    <div id="page">
+      <h1 id="errorhandlinginrubysmellypatterns">
+        Error handling in Ruby: smelly patterns
+      </h1>
+      <p>
+        <em
+          >Note: This is the second post in a series on error handling in
+          Ruby.</em
+        >
+      </p>
+      <ol>
+        <li>
+          <a href="/writing/ruby-error-handling-introduction.html"
+            >Introduction</a
+          >
+        </li>
+        <li>
+          <strong
+            ><a href="/writing/ruby-error-handling-smelly-patterns.html"
+              >Smelly patterns</a
+            ></strong
+          >
+        </li>
+      </ol>
+      <hr />
+      <p>
+        As I pursue a coherent approach for error handling in Ruby, I'm bound to
+        come across patterns that I think are
+        <a href="https://en.wikipedia.org/wiki/Code_smell">smelly</a>. This post
+        attempts to maintain a list of those patterns and explain where I think
+        they fall short.
+      </p>
+      <h2 id="returningnotraiseingarubyexception">
+        Returning, not <code>raise</code>ing, a Ruby exception
+      </h2>
+      <p>
+        (This pattern was initially proposed by Robert Mosolgo in his post
+        <a
+          href="https://rmosolgo.github.io/ruby/programming/2016/11/23/raising-exceptions-is-bad.html"
+          >Raising Exceptions is Bad</a
+        >.)
+      </p>
+      <p>
+        One of the earliest patterns I experimented with was using
+        <a href="https://sorbet.org/docs/union-types#__docusaurus"
+          >Sorbet union types</a
+        >
+        and custom exception types. Rather than <code>raise</code>ing an
+        exception as a form of controlling program flow, I simply return it. In
+        this pattern, the return type of error-throwing method (like
+        <code>#sqrt</code>) will be a union of the result type
+        (<code>Float</code>) with <em>each</em> of the possible custom exception
+        types.
+      </p>
+      <pre><code class="ruby language-ruby"># typed: strict
+
+require "sorbet-runtime"
+
+class SqrtService
+  extend T::Sig
+
+  class NegativeNumberError &lt; StandardError; end
+
+  sig {
+    params(value: Float)
+      .returns(T.any(
+        Float,
+        NegativeNumberError
+      ))
+  }
+  def self.sqrt(value)
+    if value &lt; 0.0
+      return NegativeNumberError.new
+    end
+
+    Math.sqrt(value)
+  end
+end
+
+sqrt = SqrtService.sqrt(-5.4)
+if sqrt.is_a?(SqrtService::SqrtValidationError)
+  puts "Received error #{sqrt.class}"
+else
+  puts "doing something else with #{sqrt}"
+end
+</code></pre>
+      <p>
+        This pattern takes advantage of Sorbet's strong error checking by
+        forcing callers to explicitly consider the error case: without calling
+        <code>is_a?</code> on the result to narrow the result type, program
+        execution cannot continue down the happy path.
+      </p>
+      <p>
+        Still, this pattern is confusing for a couple reasons. First, it
+        <em>returns</em> instances of exceptions rather than raising them. This
+        is hardly an idiomatic Ruby pattern: exception types are generally
+        declared in order to <code>raise</code> and <code>rescue</code> them. A
+        better alternative, for instance, may be a lightweight result type. In
+        addition, the usage of <code>is_a?</code> for type narrowing is
+        inexpressive and verbose. For example, I can imagine a program with many
+        nested calls to error-throwing methods, each of which requires another
+        level of <code>is_a?</code> for the type narrowing. I'm confident that
+        are more composable patterns that allow us to chain operations in a more
+        <a href="https://fsharpforfunandprofit.com/rop/"
+          >railway-oriented manner</a
+        >.
+      </p>
+    </div>
+  </body>
+</html>
