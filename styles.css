@@ -111,6 +111,15 @@ nav ul {
   margin-top: 0;
 }
 
+/* 
+ * Main link styling.
+ *
+ * Goal: have a consistent them regardless of whether a link has been visited.
+ */
+a:visited {
+  color: blue;
+}
+
 /*
  * Writing page styling.
  */
