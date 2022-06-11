@@ -74,6 +74,15 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* 
+ * Main link styling.
+ *
+ * Goal: have a consistent them regardless of whether a link has been visited.
+ */
+#page a:visited {
+  color: blue;
+}
+
 /*
  * Here is our first use of the descendant combinator pattern, used to style
  * child elements within a parent (in this case, the nav element).
@@ -109,15 +118,6 @@ nav ul {
 
 #content p {
   margin-top: 0;
-}
-
-/* 
- * Main link styling.
- *
- * Goal: have a consistent them regardless of whether a link has been visited.
- */
-a:visited {
-  color: blue;
 }
 
 /*
