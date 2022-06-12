@@ -48,7 +48,7 @@ class SqrtService
 end
 
 sqrt = SqrtService.sqrt(-5.4)
-if sqrt.is_a?(SqrtService::SqrtValidationError)
+if sqrt.is_a?(SqrtService::NegativeNumberError)
   puts "Received error #{sqrt.class}"
 else
   puts "doing something else with #{sqrt}"
