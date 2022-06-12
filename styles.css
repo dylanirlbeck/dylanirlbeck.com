@@ -137,7 +137,12 @@ nav ul {
  * Books page styling.
  */
 .in-progress {
-  color: #367da2;
+  /* We use the !important directive to override the specifcity of the
+   * a::visited rule.
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity#the_!important_exception.
+   */
+  color: #367da2 !important;
 }
 
 /*
