@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Automated Notion backups with OCaml • Dylan Irlbeck</title>
+    <link href="/styles.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </head>
+  <body>
+    <nav>
+      <div id="name">
+        <a href="/"><span>Dylan Irlbeck</span></a>
+      </div>
+      <ul>
+        <li><a href="/writing.html">Writing</a></li>
+        <li><a href="/books.html">Books</a></li>
+      </ul>
+    </nav>
+    <div id="page">
+      <h1>Automated Notion backups with OCaml</h1>
+      <div id="content">
+        <p>
+          A significant portion of my digital life is spent on
+          <a href="https://notion.so">Notion</a>. It's where I store my notes on
+          interesting articles I read and fruitful conversations I've had with
+          others. It's where I keep my grocery lists and workout plans, easily
+          accessible from my phone when I'm out. But this heavy reliance on
+          Notion for both creation and storage of my ideas is problematic. For
+          example, what happens if Notion goes down and my data is lost? What
+          happens when there is a breach and my data is corrupted or stolen?
+          What do I do if Notion unscrupulously locks me out of my account?
+        </p>
+        <p>
+          One way to minimize the impact I'd feel if any of these scenarios were
+          to become reality is to <strong>own my data</strong>. Without my data
+          on-hand, I don't have the ability to switch to a different tool if I
+          so choose. Notion does offer
+          <a href="https://developers.notion.com/"
+            >a mechanism to backup your data</a
+          >, but only by navigating to your settings page and clicking a button
+          manually. This feature isn't terribly beneficial for me, however,
+          given how much content I add to my Notion every hour, let alone every
+          day. I needed an <em>automated</em> way to back up my Notion at the
+          frequency I wanted.
+        </p>
+        <h2 id="notionbackupocaml"><code>notion-backup-ocaml</code></h2>
+        <p>
+          Recently, I came across a number of projects that reverse-engineered
+          the Notion
+          <a href="https://www.notion.so/help/back-up-your-data"
+            >API for backing up data</a
+          >. Using these projects as inspiration, I wrote my own OCaml program
+          --
+          <a href="https://github.com/dylanirlbeck/notion-backup-ocaml"
+            ><code>notion-backup-ocaml</code></a
+          >
+          -- that hits the Notion API ands download my data for me as a ZIP.
+          Moreover, by configuring
+          <a href="https://en.wikipedia.org/wiki/Launchd"
+            ><code>launchd</code></a
+          >, a macOS utility for managing daemons, I'm able to run this program
+          at arbitrary time intervals (currently set to every day at 9AM).
+        </p>
+        <p>
+          Usage is relatively straightforward, assuming that you have basic
+          OCaml software installed and the proper environment variables set:
+        </p>
+        <pre><code class="bash language-bash">&gt; cd ~/notion-backup-ocaml &amp;&amp; dune exec notion-backup-ocaml
+Pages exported: 2017
+Export created, downloading: https://s3.us-west-2...
+Download complete: ../notion_backup.zip%
+</code></pre>
+        <p>
+          You can find detailed installation instructions, as well as the
+          implementation in OCaml,
+          <a href="https://github.com/dylanirlbeck/notion-backup-ocaml"
+            >over on GitHub</a
+          >! And if you have ideas for how to improve this tool, or are just
+          curious about OCaml in general, please don't hesitate to file an issue
+          or <a href="https://dylanirlbeck.com">contact me</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
