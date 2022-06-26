@@ -6,13 +6,13 @@ lists and workout plans, easily accessible from my phone when I'm out. But this
 heavy reliance on Notion for both creation and storage of my ideas is problematic. For example, what happens if Notion goes down and my data is lost? What happens when there is a breach and my data is corrupted or stolen? What do I do if Notion unscrupulously locks me out of my account?
 
 One way to minimize the impact I'd feel if any of these scenarios were to become
-reality is to **own my data**. Without my data on-hand, I don't have the ability to switch to a different tool if I so choose. Notion does offer [a mechanism to backup your data](https://developers.notion.com/), but only by navigating to your settings page and clicking a button manually. This feature isn't terribly beneficial for me, however, given how much content I add to my Notion every hour, let alone every day. I needed an _automated_ way to back up my Notion at the frequency I wanted.
+reality is to **own my data**. Without my data on-hand, I don't have the ability to switch to a different tool if I so choose. Notion does offer [a mechanism to backup your data](https://www.notion.so/help/back-up-your-data), but only by navigating to your settings page and clicking a button manually. This feature isn't terribly beneficial for me, however, given how much content I add to my Notion every hour, let alone every day. I needed an _automated_ way to back up my Notion at the frequency I wanted.
 
 ## `notion-backup-ocaml`
 
-Recently, I came across a number of projects that reverse-engineered the Notion
-[API for backing up data](https://www.notion.so/help/back-up-your-data). Using
-these projects as inspiration, I wrote my own OCaml program -- [`notion-backup-ocaml`](https://github.com/dylanirlbeck/notion-backup-ocaml)
+Recently, I came across a number of projects that reverse-engineered the
+sequence of Notion
+API calls that backs up user data. Using these projects as inspiration, I wrote my own OCaml program -- [`notion-backup-ocaml`](https://github.com/dylanirlbeck/notion-backup-ocaml)
 -- that hits the Notion API ands download my data for me as a ZIP. Moreover, by configuring
 [`launchd`](https://en.wikipedia.org/wiki/Launchd), a macOS utility for managing
 daemons, I'm able to run this program at arbitrary time
