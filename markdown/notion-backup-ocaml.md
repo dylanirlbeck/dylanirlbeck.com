@@ -1,7 +1,7 @@
 # Automated Notion backups with OCaml
 
 A significant portion of my digital life is spent on
-[Notion](https://notion.so). It's where I store my notes on interesting articles I read and fruitful conversations I've had with others. It's where I keep my grocery
+[Notion](https://notion.so). It's where I store my notes on interesting articles I read and fruitful conversations I have with others. It's where I keep my grocery
 lists and workout plans, easily accessible from my phone when I'm out. But this
 heavy reliance on Notion for both creation and storage of my ideas is problematic. For example, what happens if Notion goes down and my data is lost? What happens when there is a breach and my data is corrupted or stolen? What do I do if Notion unscrupulously locks me out of my account?
 
