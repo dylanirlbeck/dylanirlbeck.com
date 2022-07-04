@@ -6,7 +6,7 @@ Here lives the code for my personal website. The project is designed to be minim
 
 My primary goal for my website is to focus on the _content_. The site should be readable, fast, accessible, and navigable: if these criteria are not met, I'm off course and need to correct.
 
-[Read more about my website's design principles](https://dylanirlbeck.com/blog/design-principles).
+[Read more about my website's design principles](https://dylanirlbeck.com/writing/design-principles).
 
 ## Writing process
 
