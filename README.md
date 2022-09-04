@@ -10,7 +10,7 @@ My primary goal for my website is to focus on the _content_. The site should be 
 
 ## Writing process
 
-My writing process is simple and decidedly manual. For any blog posts, I use [Notion](https://notion.so) to handle the actual writing process: drafting, editing, and so forth. Once I'm finished, I'll export the content as Markdown and use [showdown](https://github.com/showdownjs/showdown) to convert the Markdown into HTML that I can insert into my site.
+My writing process is simple and decidedly manual. For any blog posts, I use [Notion](https://notion.so) to handle the actual writing process: drafting, editing, and so forth. Once I'm finished, I'll export the content as Markdown and use [showdown](https://github.com/showdownjs/showdown) to convert the Markdown into HTML that I can insert into my site (specifically, I'll use [my custom `createPost.js` script](https://github.com/dylanirlbeck/dylanirlbeck.com/blob/main/scripts/createPost.js)).
 
 I'll then set up all the technical boilerplate (i.e. an entry in `blog/` and a hyperlink from `blog.html` to the new post). Once I push to the `main` branch, Netlify will take care of deploying the new code automatically.
 
