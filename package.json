@@ -1,7 +1,8 @@
 {
   "scripts": {
     "dev": "yarn parcel *.html *.css",
-    "build": "yarn parcel build *.html *.css"
+    "build": "yarn parcel build *.html *.css",
+    "post": "node scripts/createPost.js"
   },
   "devDependencies": {
     "parcel": "^2.0.1",
