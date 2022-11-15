@@ -39,7 +39,11 @@ h3 {
 }
 
 /*
- * Media queries: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries.
+ * Media queries
+ *
+ * Resources:
+ *  - https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/
+ *  - https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
  *
  */
 @media (min-width: 768px) {
