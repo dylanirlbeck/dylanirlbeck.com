@@ -32,6 +32,12 @@ body {
   display: flex;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 700 !important;
+}
+
 /*
  * Media queries: https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries.
  *
