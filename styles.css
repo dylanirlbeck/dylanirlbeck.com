@@ -1,16 +1,14 @@
 /* 
  * Global styling.
  */
-
-/* TODO Can I add these in? */
-/* html { */
-/*   font-family: "Inter", sans-serif; */
-/* } */
-/* @supports (font-variation-settings: normal) { */
-/*   html { */
-/*     font-family: "Inter var", sans-serif; */
-/*   } */
-/* } */
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
 
 body {
   --font-mono: "Menlo", "Monaco", monospace;
