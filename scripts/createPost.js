@@ -30,25 +30,25 @@ const fullHtml = `
     <head>
       <meta charset="utf-8" />
       <title>${postTitle} • Dylan Irlbeck</title>
-      <link href="styles.css" rel="stylesheet" />
+      <link href="/styles.css" rel="stylesheet" />
       <link
         href="https://fonts.googleapis.com/css?family=Inter"
         rel="stylesheet"
       />
     </head>
     <body>
-      <div id="name">
-        <a href="/"><span>Dylan Irlbeck</span></a>
-      </div>
-      <ul>
-        <li><a href="/writing.html">Writing</a></li>
-        <li><a href="/highlights.html">Highlights</a></li>
-        <li><a href="/books.html">Books</a></li>
-      </ul>
-      <div id="page">
-        <div id="content">
-          ${htmlFromMarkdown}
+      <nav>
+        <div id="name">
+          <a href="/"><span>Dylan Irlbeck</span></a>
         </div>
+        <ul>
+          <li><a href="/writing.html">Writing</a></li>
+          <li><a href="/highlights.html">Highlights</a></li>
+          <li><a href="/books.html">Books</a></li>
+        </ul>
+      </nav>
+      <div id="page">
+        ${htmlFromMarkdown}
       </div>
     </body>
   </html>
