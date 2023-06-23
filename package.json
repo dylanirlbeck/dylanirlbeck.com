@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "yarn parcel *.html *.css",
     "build": "yarn parcel build *.html *.css",
-    "post": "node scripts/createPost.js"
+    "post": "node scripts/createPost.js",
+    "format": "yarn prettier --write **/*.html"
   },
   "devDependencies": {
     "parcel": "^2.0.1",
