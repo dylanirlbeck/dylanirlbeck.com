@@ -65,4 +65,6 @@ const getFileName = (filePath) => Path.parse(filePath).name;
 
 const outputFilePath = `writing/${getFileName(markdownFile)}.html`;
 
-fs.writeFileSync(outputFilePath, prettier.format(fullHtml, { parser: "html" }));
+prettier.format(fullHtml, { parser: "html" }).then((formattedHtml) => {
+  fs.writeFileSync(outputFilePath, fullHtml);
+});
