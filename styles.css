@@ -1,16 +1,14 @@
 /* 
  * Global styling.
  */
-
-/* TODO Can I add these in? */
-/* html { */
-/*   font-family: "Inter", sans-serif; */
-/* } */
-/* @supports (font-variation-settings: normal) { */
-/*   html { */
-/*     font-family: "Inter var", sans-serif; */
-/*   } */
-/* } */
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
 
 body {
   --font-mono: "Menlo", "Monaco", monospace;
@@ -28,21 +26,65 @@ body {
     sans-serif !important;
 
   font-weight: 400;
-  font-size: 16px;
   overflow-x: hidden;
   line-height: 1.5;
-
-  /* Global margins.*/
-  margin-top: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
 
   display: flex;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: 700 !important;
+}
+
 /*
- * Navigation styling.
+ * Media queries
+ *
+ * Resources:
+ *  - https://www.emailonacid.com/blog/article/email-development/emailology_media_queries_demystified_min-width_and_max-width/
+ *  - https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries
+ *
  */
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+
+    /* Global margins.*/
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  nav {
+    left: 48px;
+    width: 170px;
+  }
+  #page {
+    width: 700px;
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+
+    /* Global margins.*/
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  nav {
+    left: 20px;
+    width: 90px;
+  }
+  #page {
+    width: 300px;
+    margin-left: 120px;
+  }
+}
+
+/* * Navigation styling. */
 nav {
   /* 
    * Floats the nav bar to the left side of the screen.
@@ -52,9 +94,7 @@ nav {
   /* float: left; */
   /* TODO Read about this property. */
   text-align: left;
-  left: 48px;
   position: fixed;
-  width: 170px;
 }
 
 nav #name {
@@ -96,11 +136,6 @@ nav ul {
   margin-top: 0;
   /* Remove the default padding. */
   padding: 0;
-}
-
-#page {
-  width: 700px;
-  margin-left: 200px;
 }
 
 #page h1,
