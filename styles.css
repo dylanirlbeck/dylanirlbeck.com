@@ -38,30 +38,26 @@ body {
   margin-right: 20px;
 
   display: flex;
+  gap: 48px;
 }
 
 /*
  * Navigation styling.
  */
 nav {
-  /* 
-   * Floats the nav bar to the left side of the screen.
-   *
-   * Source: https://developer.mozilla.org/en-US/docs/Web/CSS/float.
-   */
-  /* float: left; */
-  /* TODO Read about this property. */
   text-align: left;
-  left: 48px;
-  position: fixed;
+  position: sticky;
+  top: 30px;
+  align-self: flex-start;
   width: 170px;
+  flex-shrink: 0;
 }
 
 nav #name {
   margin-bottom: 10px;
 }
 
-nav span {
+nav .active {
   font-weight: bold;
 }
 
@@ -99,8 +95,8 @@ nav ul {
 }
 
 #page {
-  width: 700px;
-  margin-left: 200px;
+  max-width: 700px;
+  flex: 1;
 }
 
 #page h1,
@@ -183,4 +179,58 @@ p code {
 
 blockquote {
   font-style: italic;
+}
+
+/*
+ * Mobile styling.
+ */
+@media (max-width: 700px) {
+  body {
+    display: block;
+    margin-top: 20px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  nav {
+    position: static;
+    width: auto;
+    left: auto;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  nav #name {
+    margin-bottom: 0;
+  }
+
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 0;
+  }
+
+  nav ul li {
+    display: inline;
+  }
+
+  #page {
+    width: auto;
+    margin-left: 0;
+  }
+
+  .writing-row {
+    flex-direction: column;
+    margin-bottom: 0.5em;
+  }
+
+  .pd {
+    width: auto;
+    padding-bottom: 0;
+    font-size: 0.85em;
+    color: #666;
+  }
 }
