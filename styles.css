@@ -16,19 +16,15 @@ body {
   --font-mono: "Menlo", "Monaco", monospace;
   --background-block: #f1f1f8;
 
-  -webkit-font-smoothing: antialiased;
-  color: #424241;
+  color: #333;
   fill: currentcolor;
 
-  /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
-  /* https://fonts.google.com/specimen/Inter#standard-styles */
-  /* This will only use Inter if they have it on their system already. */
   font-family: Helvetica, Arial, sans-serif;
 
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   overflow-x: hidden;
-  line-height: 1.5;
+  line-height: 18px;
 
   /* Global margins.*/
   margin-top: 30px;
@@ -188,7 +184,8 @@ blockquote {
     margin-top: 20px;
     margin-left: 16px;
     margin-right: 16px;
-    font-size: 18px;
+    font-size: 17px;
+    line-height: 23px;
   }
 
   nav {
