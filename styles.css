@@ -23,9 +23,7 @@ body {
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-family */
   /* https://fonts.google.com/specimen/Inter#standard-styles */
   /* This will only use Inter if they have it on their system already. */
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif !important;
+  font-family: Helvetica, Arial, sans-serif;
 
   font-weight: 400;
   font-size: 16px;
@@ -190,6 +188,7 @@ blockquote {
     margin-top: 20px;
     margin-left: 16px;
     margin-right: 16px;
+    font-size: 18px;
   }
 
   nav {
