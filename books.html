@@ -1,12 +1,9 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Books • Dylan Irlbeck</title>
     <link href="styles.css" rel="stylesheet" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Inter"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <nav>
@@ -14,32 +11,51 @@
         <a href="/"><span>Dylan Irlbeck</span></a>
       </div>
       <ul>
+        <li><a href="/about.html">About</a></li>
         <li><a href="/writing.html">Writing</a></li>
         <li><a href="/highlights.html">Highlights</a></li>
-        <li><a href="/books.html">Books</a></li>
+        <li><a class="active" href="/books.html">Books</a></li>
       </ul>
     </nav>
     <div id="page">
       <h1>Books</h1>
       <div id="content">
-        <p>
-          In order of recency and preference, here are all the books I've read
-          or am currently reading. Within each year, I present the books by the
-          rough order in which I most enjoyed them.
-        </p>
-        <p>
-          When linking to a book, I attempt to avoid any particular seller
-          (especially Amazon). If this isn't feasible, I'll default to an
-          independent bookseller or no link at all. In addition, I try to
-          reflect -- in varying degrees of detail -- on every book I read. I
-          link to these reflections when they're available.
-        </p>
-        <p>
-          Books I'm currently reading are
-          <span class="in-progress">highlighted in light blue</span>.
-        </p>
-        <h3>2024</h3>
+        <p>What's on my bookshelf. The better reads are located near the top.</p>
         <ul>
+          <li>
+            <a
+              href="https://press.uchicago.edu/ucp/books/book/chicago/H/bo29137972.html"
+              >The Human Condition</a
+            >
+            by Hannah Arendt
+          </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Stoner_(novel)">Stoner</a> by
+            John Williams
+          </li>
+          <li>
+            <a
+              href="https://www.goodreads.com/en/book/show/530415.The_Art_of_Doing_Science_and_Engineering"
+              >The Art of Doing Science And Engineering</a
+            >
+            by Richard Hamming
+          </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/The_Idea_Factory"
+              >The Idea Factory</a
+            >
+            by Jon Gertner (<a href="writing/the-idea-factory.html">notes</a>)
+          </li>
+          <li>
+            <a href="https://www.goodreads.com/book/show/6665847-daemon">Daemon</a>
+            by Daniel Suarez
+          </li>
+          <li>
+            <a href="https://press.stripe.com/where-is-my-flying-car"
+              >Where Is My Flying Car?</a
+            >
+            by J. Storrs Hall (<a href="writing/where-is-my-flying-car.html">notes</a>)
+          </li>
           <li>
             <a href="https://en.wikipedia.org/wiki/The_Denial_of_Death"
               >The Denial of Death</a
@@ -71,8 +87,7 @@
           <li>
             <a
               href="https://www.cornellpress.cornell.edu/book/9781501714412/the-twenty-six-words-that-created-the-internet/"
-            >
-              The Twenty-Six Words That Created the Internet</a
+              >The Twenty-Six Words That Created the Internet</a
             >
             by Jeff Kosseff
           </li>
@@ -89,17 +104,6 @@
               >The Complacent Class</a
             >
             by Tyler Cowen
-          </li>
-        </ul>
-        <h3>2023</h3>
-        <ul>
-          <li>
-            <a href="https://press.stripe.com/where-is-my-flying-car"
-              >Where Is My Flying Car?</a
-            >
-            by J. Storrs Hall (<a href="writing/where-is-my-flying-car.html"
-              >notes</a
-            >)
           </li>
           <li>
             <a href="https://en.wikipedia.org/wiki/Man%27s_Search_for_Meaning"
@@ -138,17 +142,16 @@
             by Mark Strand, Michael S. Johnson, and Jerome F. Climer
           </li>
           <li>
-            <a href="https://hackettpublishing.com/five-dialogues">
-              Five Dialogues: Euthyphro, Apology, Crito, Meno, Phaedo
-            </a>
+            <a href="https://hackettpublishing.com/five-dialogues"
+              >Five Dialogues: Euthyphro, Apology, Crito, Meno, Phaedo</a
+            >
             by Plato
           </li>
           <li>
             <a
               href="https://mitpress.mit.edu/9780262542906/a-new-history-of-modern-computing/"
+              >A New History of Modern Computing</a
             >
-              A New History of Modern Computing
-            </a>
             by Thomas Haigh and Paul E. Ceruzzi
           </li>
           <li>
@@ -178,28 +181,6 @@
             >
             by Meg Jay
           </li>
-        </ul>
-        <h3>2022</h3>
-        <ul>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/The_Idea_Factory"
-              >The Idea Factory</a
-            >
-            by Jon Gertner (<a href="writing/the-idea-factory.html">notes</a>)
-          </li>
-          <li>
-            <a
-              href="https://press.uchicago.edu/ucp/books/book/chicago/H/bo29137972.html"
-              >The Human Condition</a
-            >
-            by Hannah Arendt
-          </li>
-          <li>
-            <a href="https://www.goodreads.com/book/show/6665847-daemon">
-              Daemon</a
-            >
-            by Daniel Suarez
-          </li>
           <li>
             <a
               href="https://us.macmillan.com/books/9780374602543/democracysdata"
@@ -210,12 +191,9 @@
           <li>
             <a
               href="https://pragprog.com/titles/swdddf/domain-modeling-made-functional/"
-              >Domain Modeling Made Functional
-            </a>
-            by Scott Wlaschin (<a
-              href="writing/domain-modeling-made-functional.html"
-              >notes</a
-            >)
+              >Domain Modeling Made Functional</a
+            >
+            by Scott Wlaschin (<a href="writing/domain-modeling-made-functional.html">notes</a>)
           </li>
           <li>
             <a href="https://www.goodreads.com/book/show/170448.Animal_Farm"
@@ -224,21 +202,14 @@
             by George Orwell
           </li>
           <li>
-            <a
-              href="https://www.goodreads.com/en/book/show/530415.The_Art_of_Doing_Science_and_Engineering"
-              >The Art of Doing Science And Engineering</a
-            >
-            by Richard Hamming
-          </li>
-          <li class>
             <a href="https://nyupress.org/9781479894093/accessible-america/"
               >Accessible America</a
             >
             by Bess Williamson
           </li>
           <li>
-            <a href="https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction">
-              Weapons of Math Destruction</a
+            <a href="https://en.wikipedia.org/wiki/Weapons_of_Math_Destruction"
+              >Weapons of Math Destruction</a
             >
             by Cathy O'Neil
           </li>
@@ -250,27 +221,17 @@
             by Nadia Eghbal
           </li>
           <li>
-            <a href="https://www.goodreads.com/book/show/44719608-refactoring">
-              Refactoring</a
+            <a href="https://www.goodreads.com/book/show/44719608-refactoring"
+              >Refactoring</a
             >
             by Martin Fowler
           </li>
           <li>
             <a
               href="https://us.macmillan.com/books/9780374538668/blockchainchickenfarm"
+              >Blockchain Chicken Farm</a
             >
-              Blockchain Chicken Farm
-            </a>
-            by Xiaowei Wang (<a href="writing/blockchain-chicken-farm.html"
-              >notes</a
-            >)
-          </li>
-        </ul>
-        <h3>2021</h3>
-        <ul>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/Stoner_(novel)">Stoner</a> by
-            John Williams
+            by Xiaowei Wang (<a href="writing/blockchain-chicken-farm.html">notes</a>)
           </li>
           <li>
             <a href="https://en.wikipedia.org/wiki/There_Are_No_Children_Here"
@@ -286,17 +247,13 @@
             by Thomas Kuhn
           </li>
           <li>
-            <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four">
-              1984
-            </a>
+            <a href="https://en.wikipedia.org/wiki/Nineteen_Eighty-Four">1984</a>
             by George Orwell
           </li>
           <li>
-            <a
-              href="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html"
+            <a href="https://www.w3.org/People/Berners-Lee/Weaving/Overview.html"
+              >Weaving the Web</a
             >
-              Weaving the Web
-            </a>
             by Tim Berners-Lee
           </li>
           <li>
