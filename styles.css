@@ -235,6 +235,7 @@ blockquote {
   display: block;
   color: #666;
   font-size: 0.9em;
-  margin-top: 0.5em;
+  margin-top: 0.75em;
+  margin-bottom: 1.5em;
   font-style: italic;
 }
