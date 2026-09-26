@@ -97,6 +97,7 @@ nav ul {
 #page h2,
 #page h3 {
   margin: 0 0 0.6em 0;
+  line-height: 1.2;
 }
 /* 
  * Main content styling. 
