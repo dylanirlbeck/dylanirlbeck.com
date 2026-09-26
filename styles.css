@@ -230,3 +230,11 @@ blockquote {
     color: #666;
   }
 }
+
+.date {
+  display: block;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  font-style: italic;
+}
