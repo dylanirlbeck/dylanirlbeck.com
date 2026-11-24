@@ -7,7 +7,7 @@
  */
 const fs = require("fs");
 const Path = require("path");
-const Showdown = require("showdown");
+const { marked } = require("marked");
 const prettier = require("prettier");
 
 const [markdownFile, postTitle] = process.argv.slice(2);
@@ -21,8 +21,7 @@ if (markdownFile == null) {
 }
 
 const markdown = fs.readFileSync(markdownFile).toString();
-const converter = new Showdown.Converter();
-const htmlFromMarkdown = converter.makeHtml(markdown);
+const htmlFromMarkdown = marked.parse(markdown);
 
 const fullHtml = `
   <!DOCTYPE html>
